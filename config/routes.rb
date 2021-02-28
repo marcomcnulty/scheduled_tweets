@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
+  get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
   delete "logout", to: "sessions#destroy"
 end
