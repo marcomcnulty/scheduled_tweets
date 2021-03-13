@@ -6,6 +6,7 @@
 
     <% if tweet.published? %>
       <%= link_to "View Tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", target: :_blank %>
+      <%= link_to "Delete Tweet", tweet_path(tweet), method: :delete %>
     <% else %>
       Scheduled for <%= l tweet.publish_at, format: :short %>
       <%= link_to "Edit Tweet", edit_tweet_path(tweet) %>
