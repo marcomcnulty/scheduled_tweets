@@ -1,4 +1,4 @@
-class TweeetJob < ApplicationJob
+class TweetJob < ApplicationJob
   queue_as :default
 
   def perform(tweet)
