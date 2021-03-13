@@ -9,17 +9,19 @@ class OmniauthCallbacksController < ApplicationController
   private
 
   def set_twitter_account
+    binding.pry
+
     @twitter_account.update(
-      name:     auth.name,
-      username: auth.nickname,
-      image:    auth.image,
-      token:    auth.token,
-      secret:   auth.secret
+      name:     auth.info.name,
+      username: auth.info.nickname,
+      image:    auth.info.image,
+      token:    auth.credentials.token,
+      secret:   auth.credentials.secret
     )
   end
 
   # Omniauth's way of accessing the credentials
   def auth
-    request.env["omniauth.auth"].info
+    request.env["omniauth.auth"]
   end
 end
