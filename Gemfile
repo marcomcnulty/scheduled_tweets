@@ -56,6 +56,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
+# Twitter API + Auth
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "omniauth-twitter", "~> 1.4"
 gem "twitter", "~> 7.0"
+# Background jobs (requires redis)
+gem "sidekiq", "~> 6.1", ">= 6.1.3"
