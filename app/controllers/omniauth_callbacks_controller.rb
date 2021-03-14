@@ -9,8 +9,6 @@ class OmniauthCallbacksController < ApplicationController
   private
 
   def set_twitter_account
-    binding.pry
-
     @twitter_account.update(
       name:     auth.info.name,
       username: auth.info.nickname,
